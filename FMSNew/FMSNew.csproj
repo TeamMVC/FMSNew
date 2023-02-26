@@ -162,6 +162,7 @@
     <Content Include="Content\prism.css" />
     <Content Include="Content\Slider.css" />
     <Content Include="Content\twitter-bootstrap.css" />
+    <Content Include="dbScriptWithData\SQLQuery13.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
