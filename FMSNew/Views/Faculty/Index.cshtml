@@ -1,0 +1,70 @@
+﻿@model List<FMSAPI.Models.GetFacultyData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Faculty Name
+        </th>
+        <th>
+            Faculty Qualification
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            ContactNo
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+             Assign Course
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty_Qualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dept_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assign_Course)
+        </td>       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FacultyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FacultyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FacultyID })
+        </td>
+    </tr>
+}
+
+</table>

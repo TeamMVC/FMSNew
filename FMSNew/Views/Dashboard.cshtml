@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<h4>Welcome @Session["UserName"]</h4>
+
+@Html.ActionLink("Logout", "Logout")
+@Html.ActionLink("Faculty","Index", "Faculty")
