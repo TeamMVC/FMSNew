@@ -207,6 +207,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\twitter-bootstrap.css" />
+    <Content Include="dbScriptWithData\ScriptWithData.sql" />
     <Content Include="dbScriptWithData\SQLQuery13.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
