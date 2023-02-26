@@ -62,13 +62,20 @@ namespace FMSNew.Controllers
                     if (User.Email != null && User.Passward != null)
                     {
                         Session["UserName"] = User.Name;
+                        Session["Email"] = User.Email;
                     }
 
                     Session["UserId"] = User.Id;
                     Session["RoleId"] = User.RoleId;
                     FormsAuthentication.SetAuthCookie(User.Name, false);
-
-                    return View("~/Views/Dashboard.cshtml");
+                    if (User.RoleId == 2)
+                    {
+                        return RedirectToAction("FacultyDashBoard", "FacultyDashBoard");
+                    }
+                    else
+                    {
+                        return View("~/Views/Dashboard.cshtml");
+                    }
                 }
                 else
                 {
@@ -85,31 +92,6 @@ namespace FMSNew.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-        //public ActionResult Registration()
-        //{
-        //    var dlist = RetuningData.ReturnigList<CenterModel>("usp_getCenter", null);
-        //    ViewBag.Center = new SelectList(dlist, "CenterId", "CenterName");
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult Registration(RegistrationModel reg)
-        //{
-        //    var param = new DynamicParameters();
-        //    param.Add("@Name", reg.name);
-        //    param.Add("@Email", reg.emalid);
-        //    param.Add("@Passward", reg.password);
-        //    param.Add("@Status", reg.status);
-        //    param.Add("@CenterId", 1);
-
-        //    int i = RetuningData.AddOrSave<int>("usp_getUserLogin", param);
-        //    if (i > 0)
-        //    {
-        //        return RedirectToAction("Login");
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //}
+      
     }
 }

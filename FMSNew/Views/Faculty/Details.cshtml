@@ -4,78 +4,78 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2> Faculty Details</h2>
 
 <div>
-    <h4>Tbl_Faculty</h4>
+   
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayName("Faculty Name")
+        <dt style="text-align:left">
+            @Html.DisplayName("Faculty Name :")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Faculty_Name)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Faculty_Qualification)
+        <dt style="text-align:left">
+            @Html.DisplayName("Faculty Qualification:")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Faculty_Qualification)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
+        <dt style="text-align:left">
+            @Html.DisplayName("Gender:")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Gender)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactNo)
+        <dt style="text-align:left">
+            @Html.DisplayName("Contact No:")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ContactNo)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
+        <dt style="text-align:left">
+            @Html.DisplayName("Address:")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Address)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Dept_Name)
+        <dt style="text-align:left">
+            @Html.DisplayName("Department Name:")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Dept_Name)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Assign_Course)
+        <dt style="text-align:left">
+            @Html.DisplayName("Asigned Course:")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Assign_Course)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailID)
+        <dt style="text-align:left">
+            @Html.DisplayName("Email Id:")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EmailID)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
+        <dt style="text-align:left">
+            @Html.DisplayName("Password:")
         </dt>
 
         <dd>
@@ -86,6 +86,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.FacultyID }) |
+   
     @Html.ActionLink("Back to List", "Index")
 </p>

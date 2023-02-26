@@ -6,6 +6,9 @@
 <h2>Dashboard</h2>
 
 <h4>Welcome @Session["UserName"]</h4>
+<script type="text/javascript">
+    function preventBack() { window.history.forward(); }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+</script>
 
-@Html.ActionLink("Logout", "Logout")
-@Html.ActionLink("Faculty","Index", "Faculty")

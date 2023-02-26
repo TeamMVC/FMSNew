@@ -12,24 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Dept_Name)
+            @Html.DisplayName("Department")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayName("Description")
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.updatedOn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UpdatedBy)
-        </th>
-        <th></th>
+       
+        <th>  @Html.DisplayName("Action")</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -40,18 +29,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.updatedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UpdatedBy)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Dept_ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.Dept_ID }) |

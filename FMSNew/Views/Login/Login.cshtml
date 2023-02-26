@@ -1,11 +1,15 @@
 ﻿@model FMSAPI.Models.tbl_UserLogin
 
-@{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Login";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 @*<h2>Login</h2>*@
+
+<script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+</script>
 <style>
 
     /* style the container */
@@ -134,12 +138,12 @@
 
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 @*<div class="form-group">
-            @Html.LabelFor(model => model.lid, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.lid, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.lid, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
+                                        @Html.LabelFor(model => model.lid, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.lid, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.lid, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@
 
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -159,7 +163,7 @@
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
                                         <input type="submit" value="Login" class="btn btn-default" style="width: 30%;" />
-                                    
+
                                     </div>
                                 </div>
 

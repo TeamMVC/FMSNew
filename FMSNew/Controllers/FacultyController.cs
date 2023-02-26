@@ -64,19 +64,23 @@ namespace FMSNew.Controllers
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<GetFacultyData>();
+                    //var readTask = result.Content.ReadAsAsync<GetFacultyData>();
+                  //  readTask.Wait();
+                    var readTask = result.Content.ReadAsAsync<IEnumerable<GetFacultyData>>();
                     readTask.Wait();
-                    
-                    resultData.Faculty_Name = readTask.Result.Faculty_Name;
-                    resultData.Faculty_Qualification = readTask.Result.Faculty_Qualification;
-                    resultData.Gender = readTask.Result.Gender;
-                    resultData.ContactNo = readTask.Result.ContactNo;
-                    resultData.Address = readTask.Result.Address;
-                    resultData.Assign_Course = readTask.Result.Assign_Course;
-                    resultData.Dept_Name = readTask.Result.Dept_Name;
-                    resultData.EmailID = readTask.Result.EmailID;
-                    resultData.Password = readTask.Result.Password;
-                    Faculty = readTask.Result;
+
+                    var Faculty1 = readTask.Result.FirstOrDefault();
+                    //return View(Faculty);
+                    resultData.Faculty_Name = Faculty1.Faculty_Name;
+                    resultData.Faculty_Qualification = Faculty1.Faculty_Qualification;
+                    resultData.Gender = Faculty1.Gender;
+                    resultData.ContactNo = Faculty1.ContactNo;
+                    resultData.Address = Faculty1.Address;
+                    resultData.Assign_Course = Faculty1.Assign_Course;
+                    resultData.Dept_Name = Faculty1.Dept_Name;
+                    resultData.EmailID = Faculty1.EmailID;
+                    resultData.Password = Faculty1.Password;
+                  //  resultData = readTask.Result.FirstOrDefault();
                 }
             }
             return View(resultData);
@@ -218,7 +222,8 @@ namespace FMSNew.Controllers
         // GET: Faculty/Edit/5
         public ActionResult Edit(int? id)
         {
-            Tbl_Faculty Faculty = null;
+            GetFacultyData Faculty = new GetFacultyData();
+            FMSNew.Models.GetFacultyData resultData = new Models.GetFacultyData();
 
             using (var client = new HttpClient())
             {
@@ -230,10 +235,20 @@ namespace FMSNew.Controllers
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<Tbl_Faculty>();
+                    var readTask = result.Content.ReadAsAsync<IEnumerable<GetFacultyData>>();
                     readTask.Wait();
 
-                    Faculty = readTask.Result;
+                    var Faculty1 = readTask.Result.FirstOrDefault();
+                    //return View(Faculty);
+                    resultData.Faculty_Name = Faculty1.Faculty_Name;
+                    resultData.Faculty_Qualification = Faculty1.Faculty_Qualification;
+                    resultData.Gender = Faculty1.Gender;
+                    resultData.ContactNo = Faculty1.ContactNo;
+                    resultData.Address = Faculty1.Address;
+                    resultData.Assign_Course = Faculty1.Assign_Course;
+                    resultData.Dept_Name = Faculty1.Dept_Name;
+                    resultData.EmailID = Faculty1.EmailID;
+                    resultData.Password = Faculty1.Password;
                     IEnumerable<Tbl_Department> Department = null;
 
                     using (var client2 = new HttpClient())
@@ -275,7 +290,7 @@ namespace FMSNew.Controllers
                     }
                 }
             }
-            return View(Faculty);
+            return View(resultData);
         }
 
         // POST: Faculty/Edit/5
@@ -359,7 +374,8 @@ namespace FMSNew.Controllers
         // GET: Faculty/Delete/5
         public ActionResult Delete(int? id)
         {
-            Tbl_Faculty Faculty = null;
+            GetFacultyData Faculty = new GetFacultyData();
+            FMSNew.Models.GetFacultyData resultData = new Models.GetFacultyData();
 
             using (var client = new HttpClient())
             {
@@ -371,13 +387,24 @@ namespace FMSNew.Controllers
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<Tbl_Faculty>();
+                    var readTask = result.Content.ReadAsAsync<IEnumerable<GetFacultyData>>();
                     readTask.Wait();
 
-                    Faculty = readTask.Result;
+                    var Faculty1 = readTask.Result.FirstOrDefault();
+                    //return View(Faculty);
+                    resultData.Faculty_Name = Faculty1.Faculty_Name;
+                    resultData.Faculty_Qualification = Faculty1.Faculty_Qualification;
+                    resultData.Gender = Faculty1.Gender;
+                    resultData.ContactNo = Faculty1.ContactNo;
+                    resultData.Address = Faculty1.Address;
+                    resultData.Assign_Course = Faculty1.Assign_Course;
+                    resultData.Dept_Name = Faculty1.Dept_Name;
+                    resultData.EmailID = Faculty1.EmailID;
+                    resultData.Password = Faculty1.Password;
+                  //  Faculty = readTask.Result;
                 }
             }
-            return View(Faculty);
+            return View(resultData);
         }
 
         // POST: Faculty/Delete/5
